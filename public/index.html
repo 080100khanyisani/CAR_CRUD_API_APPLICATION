@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car CRUD API</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div x-data="carApp()" x-init="fetchCars()">
+  
+    
+    <!-- Add Car -->
+    <section>
+      <h2>Add a Car:</h2>
+      <form @submit.prevent="addCar()">
+        <div>
+          <label>
+            Color:
+            <input type="text" x-model="newCar.color" placeholder="Color" required>
+          </label>
+        </div>
+        <div>
+          <label>
+            Make:
+            <input type="text" x-model="newCar.make" placeholder="Make" required>
+          </label>
+        </div>
+        <div>
+          <label>
+            Model:
+            <input type="text" x-model="newCar.model" placeholder="Model" required>
+          </label>
+        </div>
+        <div>
+          <label>
+            Registration Number:
+            <input type="text" x-model="newCar.reg_number" placeholder="Registration Number" required>
+          </label>
+        </div>
+        <button type="submit">Add Car</button>
+      </form>
+    </section>
+  
+    <!-- Delete Car -->
+    <section>
+      <h2>Delete a Car:</h2>
+      <form @submit.prevent="deleteCar()">
+        <div>
+          <label>
+            Registration Number to Delete:
+            <input type="text" x-model="regNumberToDelete" placeholder="Registration Number to Delete" required>
+          </label>
+        </div>
+        <button type="submit">Delete Car</button>
+      </form>
+    </section>
+  
+    <!-- Most Popular Make -->
+    <section>
+      <button @click="fetchMostPopularMake()">Get Most Popular Make</button>
+      <div>
+        <h2>Most Popular Make:</h2>
+        <div x-text="mostPopularMake"></div>
+      </div>
+    </section>
+  
+    <!-- Display All Cars -->
+    <section>
+      <h2>All Cars:</h2>
+      <ul>
+        <template x-for="car in cars" :key="car.reg_number">
+          <li>
+            <strong x-text="car.make"></strong> - 
+            <span x-text="car.model"></span> 
+            (Reg: <span x-text="car.reg_number"></span>, Color: <span x-text="car.color"></span>)
+          </li>
+        </template>
+      </ul>
+    </section>
+  </div>
+  
+
+  <script src="./alpine.js"></script>
+</body>
+
+</html>

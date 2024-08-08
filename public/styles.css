@@ -1,0 +1,87 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #08052b;
+  color: #333;
+  padding: 20px;
+}
+
+
+/* Headings */
+h1, h2, h3 {
+  color: #f0eaea;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: #361616;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Forms */
+form {
+  background: #f5c0c0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+form input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #57a054;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #89978c;
+  border: none;
+  color: #5d086e;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+form button:hover {
+  background-color: #0ef13f;
+}
+
+/* Additional Elements */
+h3 {
+  margin-bottom: 10px;
+}
+
+div[x-text] {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+}
